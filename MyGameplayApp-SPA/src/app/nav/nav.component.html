@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <a class="navbar-brand text-light" href="#">GAMEPLAY</a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link text-light" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="#">Why Gameplay?</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="#">Support</a>
+      </li>
+      <li class="nav-item">
+        <a (click)="loggedOut()" class="nav-link text-light" href="#">Logout</a>
+      </li>
+    </ul>
+
+    <a *ngIf="loggedIn()" class="dropdown-toggle text-light">Welcome user!</a>
+
+    <form *ngIf="!loggedIn()" #loginForm="ngForm" class="form-inline my-2 my-lg-0" (ngSubmit)="login()">
+      <input class="form-control mr-sm-2" type="text" name="username"
+      placeholder="Username" required [(ngModel)]="model.username">
+      <input class="form-control mr-sm-2" type="password" name="password"
+      placeholder="Password" required [(ngModel)]="model.password">
+      <button [disabled]="!loginForm.valid" class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+    </form>
+  </div>
+</nav>

@@ -1,0 +1,15 @@
+<div class="container mt-5">
+  <div *ngIf="!registerMode" class="jumbotron">
+    <h1 class="display-4">Hello, Athletes!</h1>
+    <p class="lead">You've arrived into the future of sports. The simplicity.
+      The organisation. The Drive. Be ready to fire up!
+    </p>
+    <hr class="my-4">
+    <p>Join us in helping you channel your energy correctly, on and off the pitch. </p>
+    <a class="btn btn-primary btn-success mr-4" href="#" role="button" (click)="registerToggle()">
+      Sign Up</a>
+    <a class="btn btn-primary btn-primary" href="#" role="button">Learn more</a>
+  </div>
+
+  <app-register *ngIf="registerMode" (cancelRegister)="cancelRegisterMode($event)"></app-register>
+</div>
